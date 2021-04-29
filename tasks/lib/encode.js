@@ -9,7 +9,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var mime = require('mime');
+var mime = require('mime/lite');
 var grunt = require('grunt');
 var fetch = require('./fetch');
 var _ = grunt.util._;
@@ -206,7 +206,7 @@ exports.image = function(img, opts, done) {
           return complete(err);
         }
 
-        var type = mime.lookup(img);
+        var type = mime.getType(img);
         var encoded = getDataURI(type, src);
         complete(null, encoded, cacheable);
       });
@@ -221,7 +221,7 @@ exports.image = function(img, opts, done) {
     // Read the local file, and convert it, and cache it.
     grunt.log.writeln('Encoding file: ' + img);
     var src = fs.readFileSync(img);
-    var type = mime.lookup(img);
+    var type = mime.getType(img);
     var encoded = getDataURI(type, src);
     complete(null, encoded, true);
   };
