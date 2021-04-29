@@ -1,32 +1,32 @@
 {
-  "name" : "grunt-image-embed",
-  "description" : "Grunt task for embedding images as base64 data URIs inside your stylesheets.",
-  "version" : "0.3.3",
-  "homepage" : "",
-  "main" : "grunt.js",
-  "bin" : "bin/grunt-image-embed",
-  "author" : {
-    "name" : "Eric Hynds",
-    "email" : "ehynds@gmail.com",
-    "url" : "http://erichynds.com"
+  "name": "grunt-image-embed",
+  "description": "Grunt task for embedding images as base64 data URIs inside your stylesheets.",
+  "version": "0.3.4",
+  "homepage": "",
+  "main": "grunt.js",
+  "bin": "bin/grunt-image-embed",
+  "author": {
+    "name": "Eric Hynds",
+    "email": "ehynds@gmail.com",
+    "url": "http://erichynds.com"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/ehynds/grunt-image-embed.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ehynds/grunt-image-embed.git"
   },
-  "bugs" : {
-    "url" : "https://github.com/ehynds/grunt-image-embed/issues"
+  "bugs": {
+    "url": "https://github.com/ehynds/grunt-image-embed/issues"
   },
-  "engines" : {
-    "node" : ">=8"
+  "engines": {
+    "node": ">=8"
   },
-  "scripts" : {
-    "test" : "grunt test"
+  "scripts": {
+    "test": "grunt test"
   },
-  "dependencies" : {
-    "request" : "^2.88.2",
-    "buffers" : "^0.1.1",
-    "mime" : "^2.5.2",
+  "dependencies": {
+    "request": "^2.88.2",
+    "buffers": "^0.1.1",
+    "mime": "^2.5.2",
     "async": "^3.2.0"
   },
   "devDependencies": {
@@ -35,7 +35,11 @@
     "grunt-contrib-jshint": "^3.0.0",
     "grunt-contrib-nodeunit": "^3.0.0"
   },
-  "keywords" : [
-    "gruntplugin", "base64", "data URI", "css", "image"
+  "keywords": [
+    "gruntplugin",
+    "base64",
+    "data URI",
+    "css",
+    "image"
   ]
 }
