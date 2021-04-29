@@ -7,6 +7,8 @@
  */
 'use strict';
 
+var async = require('async');
+
 module.exports = function(grunt) {
   var encode = require('./lib/encode');
 
@@ -38,7 +40,7 @@ module.exports = function(grunt) {
       }
 
       // Once all files have been processed write them out.
-      grunt.util.async.parallel(tasks, function(err, output) {
+      async.parallel(tasks, function(err, output) {
         grunt.file.write(dest, output);
         grunt.log.writeln('File "' + dest + '" created.');
 

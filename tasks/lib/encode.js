@@ -12,7 +12,7 @@ var path = require('path');
 var mime = require('mime/lite');
 var grunt = require('grunt');
 var fetch = require('./fetch');
-var _ = grunt.util._;
+var async = require('async');
 
 // Cache regex's
 var rImages = /([\s\S]*?)(url\(([^)]+)\))(?!\s*[;,]?\s*\/\*\s*ImageEmbed:skip\s*\*\/)|([\s\S]+)/img;
@@ -65,7 +65,7 @@ module.exports.stylesheet = function(srcFile, opts, done) {
   var result = '';
   var img, group;
 
-  grunt.util.async.whilst(function(cb) {
+  async.whilst(function(cb) {
     group = rImages.exec(src);
     return cb(null, group != null);
   }, function(complete) {
@@ -166,9 +166,10 @@ exports.image = function(img, opts, done) {
   }
 
   // Set default, helper-specific options
-  opts = _.extend({
-    maxImageSize: 32768
-  }, opts);
+  opts = Object.create(opts);
+  if(!opts.maxImageSize) {
+    opts.maxImageSize = 32768;
+  }
 
   /**
    * Callback when the image has been base64 encoded.
@@ -229,7 +230,7 @@ exports.image = function(img, opts, done) {
   // Ask optional callback what to do with the image
   // return values
   //  false: do not encode
-  //  true: process images as ususal
+  //  true: process images as usual
   //  String: replace the image with the returned string
   if(opts.preEncodeCallback) {
     var rv = opts.preEncodeCallback(img);
