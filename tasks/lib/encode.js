@@ -65,9 +65,9 @@ module.exports.stylesheet = function(srcFile, opts, done) {
   var result = '';
   var img, group;
 
-  grunt.util.async.whilst(function() {
+  grunt.util.async.whilst(function(cb) {
     group = rImages.exec(src);
-    return group != null;
+    return cb(null, group != null);
   }, function(complete) {
     // if there is another url to be processed, then:
     //    group[1] will hold everything up to the url declaration
@@ -113,7 +113,7 @@ module.exports.stylesheet = function(srcFile, opts, done) {
         }
       }
 
-      // Test for scheme less URLs => "//example.com/image.png"		
+      // Test for scheme less URLs => "//example.com/image.png"
       if(!isLocalFile && rSchemeless.test(loc)) {
         loc = 'http:' + loc;
       }
