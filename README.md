@@ -76,7 +76,11 @@ background: url(image.gif); /*ImageEmbed:skip*/
 
 ## Compatibility
 
-Version >= 0.3.0 of this plugin is compatible with Grunt 0.4.x. Versions 0.0.1 through 0.2.0 are only compatible with Grunt 0.3.x.
+Version >= 0.4.0 of this plugin is compatible with Grunt 1.x and node >= 8.
+
+Version 0.3.x of this plugin is compatible with Grunt 0.4.x.
+
+Versions 0.0.1 through 0.2.0 are only compatible with Grunt 0.3.x.
 
 ## License
 
