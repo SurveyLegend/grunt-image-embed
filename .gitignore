@@ -2,3 +2,4 @@ node_modules/
 example/css/output.css
 pnpm-lock.yaml
 *.lock
+.npmrc
